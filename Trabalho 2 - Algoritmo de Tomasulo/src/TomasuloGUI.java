@@ -20,6 +20,8 @@ public class TomasuloGUI extends JFrame {
     private JComboBox<String> opcodeCombo;
     private JSpinner rdSpinner, rs1Spinner, rs2Spinner, immSpinner;
     private int currentCycle = 0;
+    private JLabel ipcLabel;
+    private JLabel stallsLabel;
 
     public TomasuloGUI() {
         processor = new TomasuloProcessor(3, 6);
@@ -76,7 +78,22 @@ public class TomasuloGUI extends JFrame {
         statusArea = new JTextArea(3, 40);
         statusArea.setEditable(false);
         JScrollPane statusScroll = new JScrollPane(statusArea);
-        bottomPanel.add(statusScroll, BorderLayout.SOUTH);
+
+        // Painel de métricas
+        JPanel metricsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        metricsPanel.setBorder(BorderFactory.createTitledBorder("Métricas"));
+        
+        ipcLabel = new JLabel("ICP: 0.0");
+        stallsLabel = new JLabel("Bolhas: 0");
+        
+        metricsPanel.add(ipcLabel);
+        metricsPanel.add(stallsLabel);
+        
+        // Adiciona o painel de métricas ao painel de status
+        JPanel statusPanel = new JPanel(new BorderLayout());
+        statusPanel.add(metricsPanel, BorderLayout.NORTH);
+        statusPanel.add(statusScroll, BorderLayout.CENTER);
+        bottomPanel.add(statusPanel, BorderLayout.SOUTH);
 
         // Adiciona os painéis ao split pane
         mainSplitPane.setTopComponent(topPanel);
@@ -101,7 +118,11 @@ public class TomasuloGUI extends JFrame {
         panel.setBorder(BorderFactory.createTitledBorder("Nova Instrução"));
 
         // ComboBox para opcode
-        String[] opcodes = {"ADD", "SUB", "MUL", "DIV", "BEQ", "BNE"};
+        String[] opcodes = {
+            "ADD", "SUB", "MUL", "DIV", "BEQ", "BNE",
+            "LW", "SW", "ADDI", "SUBI", "AND", "OR",
+            "XOR", "SLT", "SLTI", "JAL", "JALR"
+        };
         opcodeCombo = new JComboBox<>(opcodes);
         panel.add(new JLabel("Opcode:"));
         panel.add(opcodeCombo);
@@ -169,6 +190,7 @@ public class TomasuloGUI extends JFrame {
         processor.executeInstructions();
         currentCycle++;
         updateTables();
+        updateMetrics();
         updateStatus("Ciclo " + currentCycle + " executado");
     }
 
@@ -176,8 +198,10 @@ public class TomasuloGUI extends JFrame {
         processor = new TomasuloProcessor(3, 6);
         instructionQueue.clear();
         currentCycle = 0;
+        ReservationStation.resetMetrics();
         updateTables();
         updateInstructionArea();
+        updateMetrics();
         updateStatus("Simulação reiniciada");
     }
 
@@ -223,12 +247,47 @@ public class TomasuloGUI extends JFrame {
     }
 
     private String instructionToString(Instruction instruction) {
-        return String.format("%s R%d R%d R%d %d",
-            instruction.opcode,
-            instruction.rd,
-            instruction.rs1,
-            instruction.rs2,
-            instruction.imm);
+        switch (instruction.opcode) {
+            case "LW":
+            case "SW":
+                return String.format("%s R%d %d(R%d)",
+                    instruction.opcode,
+                    instruction.rd,
+                    instruction.imm,
+                    instruction.rs1);
+            case "ADDI":
+            case "SUBI":
+            case "SLTI":
+                return String.format("%s R%d R%d %d",
+                    instruction.opcode,
+                    instruction.rd,
+                    instruction.rs1,
+                    instruction.imm);
+            case "BEQ":
+            case "BNE":
+                return String.format("%s R%d R%d %d",
+                    instruction.opcode,
+                    instruction.rs1,
+                    instruction.rs2,
+                    instruction.imm);
+            case "JAL":
+            case "JALR":
+                return String.format("%s R%d %d",
+                    instruction.opcode,
+                    instruction.rd,
+                    instruction.imm);
+            default:
+                return String.format("%s R%d R%d R%d",
+                    instruction.opcode,
+                    instruction.rd,
+                    instruction.rs1,
+                    instruction.rs2);
+        }
+    }
+
+    private void updateMetrics() {
+        ipcLabel.setText(String.format("ICP: %.2f", ReservationStation.getIPC()));
+        stallsLabel.setText(String.format("Bolhas: %d", ReservationStation.getTotalStalls()));
     }
 
     public static void main(String[] args) {

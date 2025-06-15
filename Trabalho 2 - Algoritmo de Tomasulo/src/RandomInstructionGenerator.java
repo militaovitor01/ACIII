@@ -15,6 +15,12 @@ class ReservationStation {
     boolean busy;
     int result;
     int destination;
+    int latency;
+    int startCycle;
+    static int totalInstructions = 0;
+    static int totalCycles = 0;
+    static int totalStalls = 0;
+    private int currentCycle = 0;
 
     public ReservationStation() {
         this.opcode = "";
@@ -23,7 +29,15 @@ class ReservationStation {
         this.busy = false;
         this.result = 0;
         this.destination = -1;
+        this.latency = 0;
+        this.startCycle = 0;
+        this.currentCycle = 0;
     }
+
+    public void setCurrentCycle(int cycle) {
+        this.currentCycle = cycle;
+    }
+
     public void execute() {
         switch (opcode) {
             case "ADD":
@@ -44,6 +58,39 @@ class ReservationStation {
             case "BNE":
                 executeBne();
                 break;
+            case "LW":
+                executeLw();
+                break;
+            case "SW":
+                executeSw();
+                break;
+            case "ADDI":
+                executeAddi();
+                break;
+            case "SUBI":
+                executeSubi();
+                break;
+            case "AND":
+                executeAnd();
+                break;
+            case "OR":
+                executeOr();
+                break;
+            case "XOR":
+                executeXor();
+                break;
+            case "SLT":
+                executeSlt();
+                break;
+            case "SLTI":
+                executeSlti();
+                break;
+            case "JAL":
+                executeJal();
+                break;
+            case "JALR":
+                executeJalr();
+                break;
             // Adicione outros casos conforme necessário
         }
         retireInstruction();
@@ -51,44 +98,121 @@ class ReservationStation {
 
     private void executeAdd() {
         result = operand1 + operand2;
+        latency = 1;
         retireInstruction();
     }
     private void executeSub() {
         result = operand1 - operand2;
+        latency = 1;
         retireInstruction();
     }
     private void executeMul() {
         result = operand1 * operand2;
+        latency = 3;
         retireInstruction();
     }
     private void executeDiv() {
         if (operand2 != 0) {
             result = operand1 / operand2;
+            latency = 5;
             retireInstruction();
         } else {
             // Trate a divisão por zero aqui (lançando uma exceção, por exemplo)
             throw new ArithmeticException("Tentativa de divisão por zero");
         }
     }
+    private void executeLw() {
+        // Simula acesso à memória
+        result = operand1 + operand2; // endereço base + offset
+        latency = 2;
+        retireInstruction();
+    }
+    private void executeSw() {
+        // Simula escrita na memória
+        result = operand1 + operand2; // endereço base + offset
+        latency = 2;
+        retireInstruction();
+    }
+    private void executeAddi() {
+        result = operand1 + operand2; // operand2 é o valor imediato
+        latency = 1;
+        retireInstruction();
+    }
+    private void executeSubi() {
+        result = operand1 - operand2; // operand2 é o valor imediato
+        latency = 1;
+        retireInstruction();
+    }
+    private void executeAnd() {
+        result = operand1 & operand2;
+        latency = 1;
+        retireInstruction();
+    }
+    private void executeOr() {
+        result = operand1 | operand2;
+        latency = 1;
+        retireInstruction();
+    }
+    private void executeXor() {
+        result = operand1 ^ operand2;
+        latency = 1;
+        retireInstruction();
+    }
+    private void executeSlt() {
+        result = (operand1 < operand2) ? 1 : 0;
+        latency = 1;
+        retireInstruction();
+    }
+    private void executeSlti() {
+        result = (operand1 < operand2) ? 1 : 0; // operand2 é o valor imediato
+        latency = 1;
+        retireInstruction();
+    }
+    private void executeJal() {
+        result = operand1; // endereço de retorno
+        latency = 1;
+        retireInstruction();
+    }
+    private void executeJalr() {
+        result = operand1; // endereço de retorno
+        latency = 1;
+        retireInstruction();
+    }
     public void executeBne() {
         shouldBranch = operand1 != operand2;
+        latency = 1;
         retireInstruction();
     }
     private void executeBeq() {
         shouldBranch = operand1 == operand2;
+        latency = 1;
+        retireInstruction();
     }
 
+    private boolean isReadyToRetire() {
+        if (!busy) return false;
+        
+        // Verifica se os operandos estão disponíveis
+        if (reorderBuffer.busy[operand1] || reorderBuffer.busy[operand2]) {
+            return false;
+        }
+
+        // Verifica se a instrução já executou por tempo suficiente
+        return (currentCycle - startCycle) >= latency;
+    }
 
     private void retireInstruction() {
-        // Verificar se a instrução está pronta para se aposentar
         if (isReadyToRetire()) {
-            // Atualizar os valores correspondentes na Reorder Buffer
+            totalInstructions++;
+            totalCycles += (currentCycle - startCycle);
+            if (currentCycle - startCycle > latency) {
+                totalStalls += (currentCycle - startCycle - latency);
+            }
+            
             if (destination >= 0 && destination < reorderBuffer.busy.length) {
-                reorderBuffer.busy[destination] = false;  // Marcar a entrada no Reorder Buffer como não ocupada
-                reorderBuffer.result[destination] = result; // Atualizar o resultado na Reorder Buffer
-                reset(); // Resetar os valores da Reservation Station
-            } else {
-                // Lógica adicional se necessário
+                reorderBuffer.busy[destination] = false;
+                reorderBuffer.result[destination] = result;
+                reset();
             }
         }
     }
@@ -97,9 +221,6 @@ class ReservationStation {
         return "BNE".equals(opcode);
     }
 
-    private boolean isReadyToRetire() {
-        return true; // Altere conforme necessário
-    }
     private boolean shouldBranch;
 
     ReorderBuffer reorderBuffer;
@@ -116,11 +237,28 @@ class ReservationStation {
         result = 0;
         destination = -1;
         shouldBranch=false;
+        latency = 0;
+        startCycle = 0;
+        currentCycle = 0;
     }
 
     // Método que retorna se a instrução de desvio condicional deve ser tomada
     public boolean shouldTakeBranch() {
         return shouldBranch;
+    }
+
+    public static double getIPC() {
+        return totalInstructions > 0 ? (double) totalInstructions / totalCycles : 0;
+    }
+
+    public static int getTotalStalls() {
+        return totalStalls;
+    }
+
+    public static void resetMetrics() {
+        totalInstructions = 0;
+        totalCycles = 0;
+        totalStalls = 0;
     }
 }
 class ReorderBuffer {
@@ -142,19 +280,17 @@ class TomasuloProcessor {
 
     private void updateState() {
         ReservationStation station = reservationStations[instructionIndex];
+        station.setCurrentCycle(cycle);
+        
         if (station.busy && !reorderBuffer.busy[station.operand1] && !reorderBuffer.busy[station.operand2]) {
             station.execute();
             if (station.isBranchInstruction() && station.shouldTakeBranch()) {
-                // Atualizar o índice para o destino do desvio
                 instructionIndex = station.destination;
             } else {
-                // Se não houver desvio, avance para a próxima instrução
                 instructionIndex = (instructionIndex + 1) % reservationStations.length;
             }
-            // Resetar os valores da estação de reserva
             station.reset();
         } else {
-            // Se a estação não estiver pronta, avance para a próxima instrução
             instructionIndex = (instructionIndex + 1) % reservationStations.length;
         }
         cycle++;
@@ -187,15 +323,14 @@ class TomasuloProcessor {
             station.operand1 = rs1;
             station.operand2 = rs2;
             station.busy = true;
-            station.result = 0; // reset result
+            station.result = 0;
             station.destination = rd;
+            station.startCycle = cycle;
 
-            // Verificar se os registradores estão ocupados no Reorder Buffer
             if (!reorderBuffer.busy[rs1] && !reorderBuffer.busy[rs2]) {
                 reorderBuffer.busy[rd] = true;
-                reorderBuffer.result[rd] = 0; // reset result
+                reorderBuffer.result[rd] = 0;
             } else {
-                // Aguardar os operandos ficarem disponíveis
                 station.busy = false;
             }
         }
@@ -247,6 +382,7 @@ class Instruction {
     String opcode;
     int rd, rs1, rs2;
     int imm;
+    int latency;
 
     public Instruction(String opcode, int rd, int rs1, int rs2, int imm) {
         this.opcode = opcode;
@@ -254,6 +390,35 @@ class Instruction {
         this.rs1 = rs1;
         this.rs2 = rs2;
         this.imm = imm;
+        this.latency = getLatencyForOpcode(opcode);
+    }
+
+    private int getLatencyForOpcode(String opcode) {
+        switch (opcode) {
+            case "ADD":
+            case "SUB":
+            case "ADDI":
+            case "SUBI":
+            case "AND":
+            case "OR":
+            case "XOR":
+            case "SLT":
+            case "SLTI":
+            case "BEQ":
+            case "BNE":
+            case "JAL":
+            case "JALR":
+                return 1;
+            case "LW":
+            case "SW":
+                return 2;
+            case "MUL":
+                return 3;
+            case "DIV":
+                return 5;
+            default:
+                return 1;
+        }
     }
 }
 /*
