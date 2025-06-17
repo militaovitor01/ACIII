@@ -1,0 +1,16 @@
+//Calcula a Soma do elementos de um espaço da memória
+Inicia_MEM:
+STR 0[0] 15
+STR 0[1] 2
+STR 0[2] 9
+STR 0[3] 19
+STR 0[4] 24
+
+MOV b 0x00F00000 //Primeiro endereço da memória
+
+Inicio:
+ADD a b[0]
+ADD b 4
+ADD c 1
+SIT c < 5 //Tamanho do array
+GOF Inicio

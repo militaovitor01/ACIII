@@ -1,0 +1,103 @@
+2 00000000 Move para Registrador
+2 00000004 Move para Registrador
+2 00000008 Move para Registrador
+2 0000000c Adição
+2 00000010 Adição
+2 00000014 Guarda na Memória
+1 00f00000 Escrever na Memória
+2 00000018 Move para Registrador
+2 0000001c Move para Registrador
+0 00f00000 Ler Memória
+2 00000020 Adição
+2 00000024 Set if Equal
+2 00000028 Jump Condicional
+2 00000010 Adição
+2 00000014 Adição
+2 00000018 Guarda na Memória
+1 00f00004 Escrever na Memória
+2 0000001c Move para Registrador
+2 00000020 Move para Registrador
+0 00f00004 Ler Memória
+2 00000024 Adição
+2 00000028 Set if Equal
+2 0000002c Jump Condicional
+2 00000010 Adição
+2 00000014 Adição
+2 00000018 Guarda na Memória
+1 00f00008 Escrever na Memória
+2 0000001c Move para Registrador
+2 00000020 Move para Registrador
+0 00f00008 Ler Memória
+2 00000024 Adição
+2 00000028 Set if Equal
+2 0000002c Jump Condicional
+2 00000010 Adição
+2 00000014 Adição
+2 00000018 Guarda na Memória
+1 00f0000c Escrever na Memória
+2 0000001c Move para Registrador
+2 00000020 Move para Registrador
+0 00f0000c Ler Memória
+2 00000024 Adição
+2 00000028 Set if Equal
+2 0000002c Jump Condicional
+2 00000010 Adição
+2 00000014 Adição
+2 00000018 Guarda na Memória
+1 00f00010 Escrever na Memória
+2 0000001c Move para Registrador
+2 00000020 Move para Registrador
+0 00f00010 Ler Memória
+2 00000024 Adição
+2 00000028 Set if Equal
+2 0000002c Jump Condicional
+2 00000010 Adição
+2 00000014 Adição
+2 00000018 Guarda na Memória
+1 00f00014 Escrever na Memória
+2 0000001c Move para Registrador
+2 00000020 Move para Registrador
+0 00f00014 Ler Memória
+2 00000024 Adição
+2 00000028 Set if Equal
+2 0000002c Jump Condicional
+2 00000010 Adição
+2 00000014 Adição
+2 00000018 Guarda na Memória
+1 00f00018 Escrever na Memória
+2 0000001c Move para Registrador
+2 00000020 Move para Registrador
+0 00f00018 Ler Memória
+2 00000024 Adição
+2 00000028 Set if Equal
+2 0000002c Jump Condicional
+2 00000010 Adição
+2 00000014 Adição
+2 00000018 Guarda na Memória
+1 00f0001c Escrever na Memória
+2 0000001c Move para Registrador
+2 00000020 Move para Registrador
+0 00f0001c Ler Memória
+2 00000024 Adição
+2 00000028 Set if Equal
+2 0000002c Jump Condicional
+2 00000010 Adição
+2 00000014 Adição
+2 00000018 Guarda na Memória
+1 00f00020 Escrever na Memória
+2 0000001c Move para Registrador
+2 00000020 Move para Registrador
+0 00f00020 Ler Memória
+2 00000024 Adição
+2 00000028 Set if Equal
+2 0000002c Jump Condicional
+2 00000010 Adição
+2 00000014 Adição
+2 00000018 Guarda na Memória
+1 00f00024 Escrever na Memória
+2 0000001c Move para Registrador
+2 00000020 Move para Registrador
+0 00f00024 Ler Memória
+2 00000024 Adição
+2 00000028 Set if Equal
+2 0000002c Jump Condicional

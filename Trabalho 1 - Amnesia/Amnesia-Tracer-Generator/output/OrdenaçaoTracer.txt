@@ -1,0 +1,515 @@
+2 00000000 Guarda na Memória
+1 00f00000 Escrever na Memória
+2 00000004 Guarda na Memória
+1 00f00004 Escrever na Memória
+2 00000008 Guarda na Memória
+1 00f00008 Escrever na Memória
+2 0000000c Guarda na Memória
+1 00f0000c Escrever na Memória
+2 00000010 Guarda na Memória
+1 00f00010 Escrever na Memória
+2 00000014 Guarda na Memória
+1 00f00014 Escrever na Memória
+2 00000018 Guarda na Memória
+1 00f00018 Escrever na Memória
+2 0000001c Move para Registrador
+2 00000020 Move para Registrador
+2 00000024 Move para Registrador
+2 00000028 Move para Registrador
+2 0000002c Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00000 Ler Memória
+0 00f00004 Ler Memória
+2 00000074 Jump Condicional
+2 00000078 Inserir no Stack
+1 ffffffff Escrever na Memória
+2 0000007c Inserir no Stack
+1 fffffffb Escrever na Memória
+2 00000080 Move para Registrador
+0 00f00000 Ler Memória
+2 00000084 Move para Registrador
+0 00f00004 Ler Memória
+2 00000088 Finaliza Applicação
+2 00000030 Guarda na Memória
+1 00f00000 Escrever na Memória
+2 00000034 Guarda na Memória
+1 00f00004 Escrever na Memória
+2 00000038 Retorno
+2 0000008c Retirar do Stack
+0 fffffffb Ler na Memória
+2 00000090 Retirar do Stack
+0 ffffffff Ler na Memória
+2 00000094 Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00000 Ler Memória
+0 00f00008 Ler Memória
+2 00000074 Jump Condicional
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00000 Ler Memória
+0 00f0000c Ler Memória
+2 00000074 Jump Condicional
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00000 Ler Memória
+0 00f00010 Ler Memória
+2 00000074 Jump Condicional
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00000 Ler Memória
+0 00f00014 Ler Memória
+2 00000074 Jump Condicional
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00000 Ler Memória
+0 00f00018 Ler Memória
+2 00000074 Jump Condicional
+2 00000078 Inserir no Stack
+1 ffffffff Escrever na Memória
+2 0000007c Inserir no Stack
+1 fffffffb Escrever na Memória
+2 00000080 Move para Registrador
+0 00f00000 Ler Memória
+2 00000084 Move para Registrador
+0 00f00018 Ler Memória
+2 00000088 Finaliza Applicação
+2 00000030 Guarda na Memória
+1 00f00000 Escrever na Memória
+2 00000034 Guarda na Memória
+1 00f00018 Escrever na Memória
+2 00000038 Retorno
+2 0000008c Retirar do Stack
+0 fffffffb Ler na Memória
+2 00000090 Retirar do Stack
+0 ffffffff Ler na Memória
+2 00000094 Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 0000006c Jump
+2 0000003c Adição
+2 00000040 Move para Registrador
+2 00000044 Subtração
+2 00000048 Move para Registrador
+2 0000004c Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00004 Ler Memória
+0 00f00008 Ler Memória
+2 00000074 Jump Condicional
+2 00000078 Inserir no Stack
+1 ffffffff Escrever na Memória
+2 0000007c Inserir no Stack
+1 fffffffb Escrever na Memória
+2 00000080 Move para Registrador
+0 00f00004 Ler Memória
+2 00000084 Move para Registrador
+0 00f00008 Ler Memória
+2 00000088 Finaliza Applicação
+2 00000030 Guarda na Memória
+1 00f00004 Escrever na Memória
+2 00000034 Guarda na Memória
+1 00f00008 Escrever na Memória
+2 00000038 Retorno
+2 0000008c Retirar do Stack
+0 fffffffb Ler na Memória
+2 00000090 Retirar do Stack
+0 ffffffff Ler na Memória
+2 00000094 Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00004 Ler Memória
+0 00f0000c Ler Memória
+2 00000074 Jump Condicional
+2 00000078 Inserir no Stack
+1 ffffffff Escrever na Memória
+2 0000007c Inserir no Stack
+1 fffffffb Escrever na Memória
+2 00000080 Move para Registrador
+0 00f00004 Ler Memória
+2 00000084 Move para Registrador
+0 00f0000c Ler Memória
+2 00000088 Finaliza Applicação
+2 00000030 Guarda na Memória
+1 00f00004 Escrever na Memória
+2 00000034 Guarda na Memória
+1 00f0000c Escrever na Memória
+2 00000038 Retorno
+2 0000008c Retirar do Stack
+0 fffffffb Ler na Memória
+2 00000090 Retirar do Stack
+0 ffffffff Ler na Memória
+2 00000094 Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00004 Ler Memória
+0 00f00010 Ler Memória
+2 00000074 Jump Condicional
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00004 Ler Memória
+0 00f00014 Ler Memória
+2 00000074 Jump Condicional
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00004 Ler Memória
+0 00f00018 Ler Memória
+2 00000074 Jump Condicional
+2 00000078 Inserir no Stack
+1 ffffffff Escrever na Memória
+2 0000007c Inserir no Stack
+1 fffffffb Escrever na Memória
+2 00000080 Move para Registrador
+0 00f00004 Ler Memória
+2 00000084 Move para Registrador
+0 00f00018 Ler Memória
+2 00000088 Finaliza Applicação
+2 00000030 Guarda na Memória
+1 00f00004 Escrever na Memória
+2 00000034 Guarda na Memória
+1 00f00018 Escrever na Memória
+2 00000038 Retorno
+2 0000008c Retirar do Stack
+0 fffffffb Ler na Memória
+2 00000090 Retirar do Stack
+0 ffffffff Ler na Memória
+2 00000094 Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 0000006c Jump
+2 0000003c Adição
+2 00000040 Move para Registrador
+2 00000044 Subtração
+2 00000048 Move para Registrador
+2 0000004c Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00008 Ler Memória
+0 00f0000c Ler Memória
+2 00000074 Jump Condicional
+2 00000078 Inserir no Stack
+1 ffffffff Escrever na Memória
+2 0000007c Inserir no Stack
+1 fffffffb Escrever na Memória
+2 00000080 Move para Registrador
+0 00f00008 Ler Memória
+2 00000084 Move para Registrador
+0 00f0000c Ler Memória
+2 00000088 Finaliza Applicação
+2 00000030 Guarda na Memória
+1 00f00008 Escrever na Memória
+2 00000034 Guarda na Memória
+1 00f0000c Escrever na Memória
+2 00000038 Retorno
+2 0000008c Retirar do Stack
+0 fffffffb Ler na Memória
+2 00000090 Retirar do Stack
+0 ffffffff Ler na Memória
+2 00000094 Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00008 Ler Memória
+0 00f00010 Ler Memória
+2 00000074 Jump Condicional
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00008 Ler Memória
+0 00f00014 Ler Memória
+2 00000074 Jump Condicional
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00008 Ler Memória
+0 00f00018 Ler Memória
+2 00000074 Jump Condicional
+2 00000078 Inserir no Stack
+1 ffffffff Escrever na Memória
+2 0000007c Inserir no Stack
+1 fffffffb Escrever na Memória
+2 00000080 Move para Registrador
+0 00f00008 Ler Memória
+2 00000084 Move para Registrador
+0 00f00018 Ler Memória
+2 00000088 Finaliza Applicação
+2 00000030 Guarda na Memória
+1 00f00008 Escrever na Memória
+2 00000034 Guarda na Memória
+1 00f00018 Escrever na Memória
+2 00000038 Retorno
+2 0000008c Retirar do Stack
+0 fffffffb Ler na Memória
+2 00000090 Retirar do Stack
+0 ffffffff Ler na Memória
+2 00000094 Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 0000006c Jump
+2 0000003c Adição
+2 00000040 Move para Registrador
+2 00000044 Subtração
+2 00000048 Move para Registrador
+2 0000004c Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f0000c Ler Memória
+0 00f00010 Ler Memória
+2 00000074 Jump Condicional
+2 00000078 Inserir no Stack
+1 ffffffff Escrever na Memória
+2 0000007c Inserir no Stack
+1 fffffffb Escrever na Memória
+2 00000080 Move para Registrador
+0 00f0000c Ler Memória
+2 00000084 Move para Registrador
+0 00f00010 Ler Memória
+2 00000088 Finaliza Applicação
+2 00000030 Guarda na Memória
+1 00f0000c Escrever na Memória
+2 00000034 Guarda na Memória
+1 00f00010 Escrever na Memória
+2 00000038 Retorno
+2 0000008c Retirar do Stack
+0 fffffffb Ler na Memória
+2 00000090 Retirar do Stack
+0 ffffffff Ler na Memória
+2 00000094 Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f0000c Ler Memória
+0 00f00014 Ler Memória
+2 00000074 Jump Condicional
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f0000c Ler Memória
+0 00f00018 Ler Memória
+2 00000074 Jump Condicional
+2 00000078 Inserir no Stack
+1 ffffffff Escrever na Memória
+2 0000007c Inserir no Stack
+1 fffffffb Escrever na Memória
+2 00000080 Move para Registrador
+0 00f0000c Ler Memória
+2 00000084 Move para Registrador
+0 00f00018 Ler Memória
+2 00000088 Finaliza Applicação
+2 00000030 Guarda na Memória
+1 00f0000c Escrever na Memória
+2 00000034 Guarda na Memória
+1 00f00018 Escrever na Memória
+2 00000038 Retorno
+2 0000008c Retirar do Stack
+0 fffffffb Ler na Memória
+2 00000090 Retirar do Stack
+0 ffffffff Ler na Memória
+2 00000094 Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 0000006c Jump
+2 0000003c Adição
+2 00000040 Move para Registrador
+2 00000044 Subtração
+2 00000048 Move para Registrador
+2 0000004c Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00010 Ler Memória
+0 00f00014 Ler Memória
+2 00000074 Jump Condicional
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00010 Ler Memória
+0 00f00018 Ler Memória
+2 00000074 Jump Condicional
+2 00000078 Inserir no Stack
+1 ffffffff Escrever na Memória
+2 0000007c Inserir no Stack
+1 fffffffb Escrever na Memória
+2 00000080 Move para Registrador
+0 00f00010 Ler Memória
+2 00000084 Move para Registrador
+0 00f00018 Ler Memória
+2 00000088 Finaliza Applicação
+2 00000030 Guarda na Memória
+1 00f00010 Escrever na Memória
+2 00000034 Guarda na Memória
+1 00f00018 Escrever na Memória
+2 00000038 Retorno
+2 0000008c Retirar do Stack
+0 fffffffb Ler na Memória
+2 00000090 Retirar do Stack
+0 ffffffff Ler na Memória
+2 00000094 Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 0000006c Jump
+2 0000003c Adição
+2 00000040 Move para Registrador
+2 00000044 Subtração
+2 00000048 Move para Registrador
+2 0000004c Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 00000070 Set if Equal
+0 00f00014 Ler Memória
+0 00f00018 Ler Memória
+2 00000074 Jump Condicional
+2 00000078 Inserir no Stack
+1 ffffffff Escrever na Memória
+2 0000007c Inserir no Stack
+1 fffffffb Escrever na Memória
+2 00000080 Move para Registrador
+0 00f00014 Ler Memória
+2 00000084 Move para Registrador
+0 00f00018 Ler Memória
+2 00000088 Finaliza Applicação
+2 00000030 Guarda na Memória
+1 00f00014 Escrever na Memória
+2 00000034 Guarda na Memória
+1 00f00018 Escrever na Memória
+2 00000038 Retorno
+2 0000008c Retirar do Stack
+0 fffffffb Ler na Memória
+2 00000090 Retirar do Stack
+0 ffffffff Ler na Memória
+2 00000094 Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000064 Set if Equal
+2 00000068 Executa linha se verdadeiro
+2 0000006c Jump
+2 0000003c Adição
+2 00000040 Move para Registrador
+2 00000044 Subtração
+2 00000048 Move para Registrador
+2 0000004c Jump
+2 00000050 Adição
+2 00000054 Subtração
+2 00000058 Set if Equal
+2 0000005c Executa linha se verdadeiro
+2 00000060 Finaliza Código (HALT)

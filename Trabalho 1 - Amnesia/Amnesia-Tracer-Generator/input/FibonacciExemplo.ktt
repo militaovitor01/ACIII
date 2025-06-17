@@ -1,0 +1,15 @@
+// Sequencia de Fibonacci.
+// A partir da primeira posição da memória, calcula e escreve a sequência
+MOV b 0x00F00000
+MOV a 0
+MOV d 1
+
+Loop:
+ADD c 1
+ADD a d
+STR b[0] d
+MOV d a
+MOV a b[0]
+ADD b 4
+SIT c < 10 //Oito Iterações
+GOF Loop

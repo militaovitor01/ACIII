@@ -1,0 +1,48 @@
+//Ordenação por seleção
+
+//Preenchimento do Array - 7 Elementos
+STR 0[0] 23
+STR 0[1] 3
+STR 0[2] 18
+STR 0[3] 14
+STR 0[4] 21
+STR 0[5] 25
+STR 0[6] 2
+
+MOV b 0x00f00000 //Primeiro endereço do Array
+MOV c b
+MOV a 7 //Tamanho do Array
+MOV d a
+JMP Inicio
+
+Troca: //a = [b] d = [c]
+STR b[0] d
+STR c[0] a
+RET
+
+Novo_I: //Elemento Pivo avança
+ADD b 4
+MOV c b
+SUB a 1
+MOV d a
+JMP Inicio
+
+Inicio:
+ADD c 4
+SUB d 1
+SIT a = 1
+LIF
+HLT //Finaliza Código
+SIT d = 0
+LIF
+JMP Novo_I
+SIT b[0] < c[0]
+GOF Inicio
+PSH a
+PSH d
+MOV a b[0]
+MOV d c[0]
+JMR Troca
+POP d
+POP a
+JMP Inicio

@@ -1,0 +1,41 @@
+2 00000000 Guarda na Memória
+1 00f00000 Escrever na Memória
+2 00000004 Guarda na Memória
+1 00f00004 Escrever na Memória
+2 00000008 Guarda na Memória
+1 00f00008 Escrever na Memória
+2 0000000c Guarda na Memória
+1 00f0000c Escrever na Memória
+2 00000010 Guarda na Memória
+1 00f00010 Escrever na Memória
+2 00000014 Move para Registrador
+2 00000018 Adição
+0 00f00000 Ler Memória
+2 0000001c Adição
+2 00000020 Adição
+2 00000024 Set if Equal
+2 00000028 Jump Condicional
+2 0000001c Adição
+0 00f00004 Ler Memória
+2 00000020 Adição
+2 00000024 Adição
+2 00000028 Set if Equal
+2 0000002c Jump Condicional
+2 0000001c Adição
+0 00f00008 Ler Memória
+2 00000020 Adição
+2 00000024 Adição
+2 00000028 Set if Equal
+2 0000002c Jump Condicional
+2 0000001c Adição
+0 00f0000c Ler Memória
+2 00000020 Adição
+2 00000024 Adição
+2 00000028 Set if Equal
+2 0000002c Jump Condicional
+2 0000001c Adição
+0 00f00010 Ler Memória
+2 00000020 Adição
+2 00000024 Adição
+2 00000028 Set if Equal
+2 0000002c Jump Condicional
